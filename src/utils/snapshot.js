@@ -19,6 +19,10 @@ export async function clearSnapshot() {
   await clear();
 }
 
+export async function getSnapshotKeys() {
+  return await keys();
+}
+
 /**
  * Saves provided state object to async storage
  *
@@ -54,5 +58,13 @@ async function clear() {
     await AsyncStorage.removeItem(STATE_STORAGE_KEY);
   } catch (e) {
     console.error('Error clearing peristed application state', e);
+  }
+}
+
+async function keys() {
+  try {
+    return await AsyncStorage.getAllKeys();
+  } catch (e) {
+    console.error('Error getting all application state keys', e);
   }
 }
