@@ -12,11 +12,14 @@
     "test:watch": "jest --watch",
     "lint": "eslint src test",
     "coverage": "rimraf coverage && jest --coverage",
-    "version": "support/version-ios.sh"
+    "version": "support/version-ios.sh",
+    "postinstall": "rndebugger-open"
   },
   "jest": {
     "preset": "react-native",
-    "setupFiles": ["<rootDir>/test/setup.js"],
+    "setupFiles": [
+      "<rootDir>/test/setup.js"
+    ],
     "transformIgnorePatterns": [
       "node_modules/(?!(jest-)?react-native|react-navigation)"
     ]
@@ -34,6 +37,7 @@
     "react-navigation": "^1.0.0-beta.7",
     "react-redux": "^4.4.5",
     "redux": "^3.4.0",
+    "redux-devtools-extension": "^2.13.0",
     "redux-logger": "^2.6.1",
     "redux-loop-symbol-ponyfill": "^2.2.0",
     "redux-promise": "^0.5.3",
@@ -56,6 +60,7 @@
     "istanbul": "1.0.0-alpha.2",
     "jest": "^17.0.2",
     "react-addons-test-utils": "~15.4.2",
+    "react-native-debugger-open": "^0.3.5",
     "react-native-mock": "~0.2.5",
     "react-test-renderer": "~15.4.2",
     "remote-redux-devtools": "^0.5.7",

@@ -2,6 +2,7 @@ import {applyMiddleware, createStore, compose} from 'redux';
 import * as reduxLoop from 'redux-loop-symbol-ponyfill';
 import middleware from './middleware';
 import reducer from './reducer';
+import {composeWithDevTools} from 'redux-devtools-extension';
 
 const enhancers = [
   applyMiddleware(...middleware),
@@ -13,7 +14,7 @@ const enhancers = [
  * https://github.com/jhen0409/react-native-debugger
  */
 /* eslint-disable no-undef */
-const composeEnhancers = (__DEV__ && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
+const composeEnhancers = (__DEV__ && composeWithDevTools) || compose;
 /* eslint-enable no-undef */
 
 const enhancer = composeEnhancers(...enhancers);
