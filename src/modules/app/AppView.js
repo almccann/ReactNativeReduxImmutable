@@ -1,10 +1,11 @@
-import React, {PropTypes, Component} from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {View, StyleSheet, StatusBar, ActivityIndicator} from 'react-native';
-import NavigatorViewContainer from './navigator/NavigatorViewContainer';
-import * as snapshotUtil from '../utils/snapshot';
-import * as SessionStateActions from '../modules/session/SessionState';
-import store from '../redux/store';
-import DeveloperMenu from '../components/DeveloperMenu';
+import NavigatorViewContainer from '../navigator/NavigatorViewContainer';
+import * as snapshotUtil from '../../utils/snapshot';
+import * as SessionStateActions from '../../modules/session/SessionState';
+import store from '../../redux/store';
+import DeveloperMenu from '../../components/DeveloperMenu';
 
 class AppView extends Component {
   static displayName = 'AppView';
